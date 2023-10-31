@@ -101,7 +101,7 @@ Historia.setVisible(false);
 add(Historia);
 PgAnt = new JButton("<<Anterior<<");
         PgAnt.setBounds(50,700,200,70);
-        Historia.add(PgAnt);
+        //Historia.add(PgAnt);
 PgSig = new JButton(">>Siguiente>>");
         PgSig.setBounds(1350,700,200,70);
         Historia.add(PgSig);
@@ -154,31 +154,31 @@ Luka.setIcon(new ImageIcon("Background/LukaBoton.PNG"));
 Katana = new JButton("Katana");
         Katana.setBounds(300,570,100,100);
         Investigacion.add(Katana);
-        Katana.setIcon(new ImageIcon("Background/KatanaIcon100.png"));
+        Katana.setIcon(new ImageIcon("Background/KatanaBoton.PNG"));
         Katana.addActionListener(this);
         Katana.addMouseListener(this);
 Puerro = new JButton("Puerro");
         Puerro.setBounds(450,570,100,100);
         Investigacion.add(Puerro);
-        Puerro.setIcon(new ImageIcon("Background/PuerroIcon100.png"));
+        Puerro.setIcon(new ImageIcon("Background/PuerroBoton.PNG"));
         Puerro.addActionListener(this);
         Puerro.addMouseListener(this);
 Cuchillo = new JButton("Cuchillo");
         Cuchillo.setBounds(600,570,100,100);
         Investigacion.add(Cuchillo);
-        Cuchillo.setIcon(new ImageIcon("Background/CuchilloIcon100.png"));
+        Cuchillo.setIcon(new ImageIcon("Background/CuchilloBoton.PNG"));
         Cuchillo.addActionListener(this);
         Cuchillo.addMouseListener(this);
 Abanico = new JButton("Abanico");
         Abanico.setBounds(375,690,100,100);
         Investigacion.add(Abanico);
-        Abanico.setIcon(new ImageIcon("Background/AbanicoIcon100.png"));
+        Abanico.setIcon(new ImageIcon("Background/AbanicoBoton.PNG"));
         Abanico.addActionListener(this);
         Abanico.addMouseListener(this);
 Pistola = new JButton("Pistola");
         Pistola.setBounds(525,690,100,100);
         Investigacion.add(Pistola);
-        Pistola.setIcon(new ImageIcon("Background/PistolaIcon100.png"));
+        Pistola.setIcon(new ImageIcon("Background/PistolaBoton.PNG"));
         Pistola.addActionListener(this);
         Pistola.addMouseListener(this);
 //habitaciones
@@ -284,28 +284,18 @@ Instruccion.setBounds(650,550,600,200);
         Instruccion.setFont(Fzl);
         Instruccion.setForeground(Color.WHITE);
         
-//Musica("Sound/Music/Kemurikusa - To me after the split.wav");
+
 Cuadro=Explicacion;
 }
 
  public void Musica(String BackSound){
        try {
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(BackSound).getAbsoluteFile());
         Clip clip = AudioSystem.getClip();
+        clip.stop();
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(BackSound).getAbsoluteFile());
         clip.open(audioInputStream);
         clip.start();
        } catch(UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
-         System.out.println("Error al reproducir el sonido.");
-       }
-     }
-
-public void Voces(String Voice){
-       try {
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(Voice).getAbsoluteFile());
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioInputStream);
-        clip.start();
-               } catch(Exception e) {
          System.out.println("Error al reproducir el sonido.");
        }
      }
@@ -330,7 +320,7 @@ Caja.setIcon(new ImageIcon("HUD/HudZero.PNG"));
 Investigacion.setVisible(false);
 BackGround.setIcon(new ImageIcon("Background/MikuDeclara.png"));
  Talk.add(PgSig);
-  Talk.add(PgAnt);
+  //Talk.add(PgAnt);
   Talk.add(BackGround);
   Cuadro=Decir;
   Pg=0;
@@ -352,7 +342,7 @@ testigosBG = new ImageIcon("Background/RinTestigos.png");
 Investigacion.setVisible(false);
 BackGround.setIcon(new ImageIcon("Background/RinDeclara.png"));
  Talk.add(PgSig);
-  Talk.add(PgAnt);
+  //Talk.add(PgAnt);
   Talk.add(BackGround);
   Cuadro=Decir;
   Pg=0;
@@ -375,7 +365,7 @@ testigosBG = new ImageIcon("Background/LenTestigos.png");
 Investigacion.setVisible(false);
 BackGround.setIcon(new ImageIcon("Background/LenDeclara.png"));
  Talk.add(PgSig);
-  Talk.add(PgAnt);
+  //Talk.add(PgAnt);
   Talk.add(BackGround);
   Cuadro=Decir;
   Pg=0;
@@ -398,7 +388,7 @@ testigosBG = new ImageIcon("Background/KaitoTestigos.png");
 Investigacion.setVisible(false);
 BackGround.setIcon(new ImageIcon("Background/KaitoDeclara.png"));
  Talk.add(PgSig);
-  Talk.add(PgAnt);
+  //Talk.add(PgAnt);
   Talk.add(BackGround);
   Cuadro=Decir;
   Pg=0;
@@ -420,7 +410,7 @@ case 5:
 Investigacion.setVisible(false);
 BackGround.setIcon(new ImageIcon("Background/LukaDeclara.png"));
  Talk.add(PgSig);
-  Talk.add(PgAnt);
+  //Talk.add(PgAnt);
   Talk.add(BackGround);
   Cuadro=Decir;
   Pg=0;
@@ -465,15 +455,19 @@ case 1:
 texto=" Eres un policia de PPS\nFuiste enviado a resolver un caso de \nhomicidio.";
 break;
 case 2: 
+BackGround.setIcon(new ImageIcon("Background/SelecPersonajes.png"));
 texto="Se encontraron 5 sospechozos:\nMiku\nRin\nLen\nKaito\ny Luka";
 break;
 case 3: 
+BackGround.setIcon(new ImageIcon("Background/BGCasaHistoria.PNG"));
 texto="En la casa existen 5 posibles lugares:\nCocina\nSala\nBaño\nUn Jardin\ny Un Cuarto, se desconoce de quien";
 break;
 case 4: 
+BackGround.setIcon(new ImageIcon("Background/armasBG.PNG"));
 texto="En la casa tambien se encontraron \n5 posibles armas homicidas:\nPistola\nCuchillo\nKatana\nUn Abanico de Papel\nY un Puerro (no pregunte porque)";
 break;
 case 5: 
+BackGround.setIcon(new ImageIcon("Background/HistorybackGround.PNG"));
 texto="A pesar de los esfuerzos de \ntus colegas, lo vieron como un \ncaso perdido y lo piensan cancelar.";
 texto=texto + "\nTu mision es averiguar:\nQuien fue?\nDonde fue el asesinato\nY que arma uso\n\n Antes de que llegue tu superior";
 break;
@@ -484,6 +478,8 @@ case 7:
 texto="BUENA SUERTE\n AGENTE ZERO";
 break;
 case 8: 
+//Musica("Sound/Music/Kemurikusa - Ruins.wav");
+Cuadro=Decir;
 Historia.setVisible(false);
 Investigacion.setVisible(true);
 BackGround.setIcon(new ImageIcon("Background/Seleccionar.PNG"));
@@ -576,6 +572,7 @@ break;
 case 7: 
 DenunciarP.setVisible(false);
 DenunciarA.setVisible(true);
+Instruccion.setBounds(650,50,600,200);
 Instruccion.setText("QUE ARMA USO?");
 DenunciarA.add(Instruccion);
 DenunciarA.add(Katana);
@@ -588,6 +585,7 @@ break;
 case 8: 
 DenunciarA.setVisible(false);
 DenunciarL.setVisible(true);
+Instruccion.setBounds(650,50,600,200);
 Instruccion.setText("DONDE FUE?");
 DenunciarL.add(Instruccion);
 DenunciarL.add(Cocina);
@@ -599,6 +597,7 @@ DenunciarL.add(BackGround);
 break;
 case 9: 
 Imagenes img = new Imagenes();
+Instruccion.setText("Resultados");
 FinalLugar.setIcon(new ImageIcon(img.SeleccionadoLugar(DesL)));
 FinalArma.setIcon(new ImageIcon(img.SeleccionadoArma(DesA)));
 FinalPerson.setIcon(new ImageIcon(img.SeleccionadoPersona(DesP)));
@@ -611,6 +610,7 @@ Escribir(texto,Cuadro);
  	if(accion.getSource()==Jugar){
  		Imagenes img = new Imagenes();
 Panel=2;
+Musica("Sound/Music/Kemurikusa - To me after the split.wav");
 Pg=0;
 MenuInicio.setVisible(false);
 Historia.setVisible(true);
@@ -717,6 +717,11 @@ public void mouseEntered(MouseEvent accion){
 	if(accion.getSource()==Jardin){Jardin.setIcon(null);Jardin.setText("JARDIN");}
 	if(accion.getSource()==Sala){Sala.setIcon(null);Sala.setText("SALA");}
 	if(accion.getSource()==Cuarto){Cuarto.setIcon(null);Cuarto.setText("CUARTO");}
+	if(accion.getSource()==Katana){Katana.setIcon(null);Katana.setText("KATANA");}
+	if(accion.getSource()==Puerro){Puerro.setIcon(null);Puerro.setText("PUERRO");}
+	if(accion.getSource()==Abanico){Abanico.setIcon(null);Abanico.setText("ABANICO");}
+	if(accion.getSource()==Pistola){Pistola.setIcon(null);Pistola.setText("PISTOLA");}
+	if(accion.getSource()==Cuchillo){Cuchillo.setIcon(null);Cuchillo.setText("CUCHILLO");}
 }
 
 public void mouseExited(MouseEvent accion){
@@ -725,6 +730,11 @@ public void mouseExited(MouseEvent accion){
 	if(accion.getSource()==Jardin){Jardin.setIcon(new ImageIcon("Background/JardinIcon100.png"));}
 	if(accion.getSource()==Sala){Sala.setIcon(new ImageIcon("Background/SalaIcon100.png"));}
 	if(accion.getSource()==Cuarto){Cuarto.setIcon(new ImageIcon("Background/CuartoIcon100.png"));}
+	if(accion.getSource()==Katana){Katana.setIcon(new ImageIcon("Background/KatanaBoton.PNG"));}
+	if(accion.getSource()==Puerro){Puerro.setIcon(new ImageIcon("Background/PuerroBoton.PNG"));}
+	if(accion.getSource()==Cuchillo){Cuchillo.setIcon(new ImageIcon("Background/CuchilloBoton.PNG"));}
+	if(accion.getSource()==Abanico){Abanico.setIcon(new ImageIcon("Background/AbanicoBoton.PNG"));}
+	if(accion.getSource()==Pistola){Pistola.setIcon(new ImageIcon("Background/PistolaBoton.PNG"));}
 }
 
   public void mouseReleased(MouseEvent accion){
